@@ -19,10 +19,15 @@ Furthermore, we will be using Django’s custom file storage layer to interact w
 
 Given our description above, there are four parts to our system:
 
+- `Concept Demo`
 - `Django file custom storage`
 - `RPCs Server & Client`
 - `Manager`
 - `Distributed File System`
+
+### Overall process
+
+There is a `concept-demo` app that uses `Django file custom storage` to communicate with a `Manager`. The Django file custom storage is in charge of sending data to the manager, and receiving data from it using RPC. The manager is the component that communicates with `Distributed File System`: the name node and the data nodes through RPC. It also saves the files in the right data nodes, and retrieves the files from them.
 
 ### How to run this application
 
