@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 function clean ()
 {
     if [ -d app ] ; then
@@ -21,9 +23,20 @@ function process ()
     cp app/manager/manager_django_pb2.py app/concept-demo/app/dfss/demo/manager_django_pb2.py
 }
 
+function run ()
+{
+    bash app/manager/startManager.sh &
+    PIDS[0]=$!
+
+    trap "kill ${PIDS[*]}" SIGINT
+
+    wait
+}
+
 if [ $# -eq 0 ]
   then
     clean
     clone
     process
+    run
 fi
