@@ -25,7 +25,8 @@ function process ()
 
 function run ()
 {
-    cd app/manager && bash startManager.sh
+    cd app/manager && bash startManager.sh &
+    cd app/concept-demo/app && python manage.py migrate && python manage.py runserver
 }
 
 if [ $# -eq 0 ]
