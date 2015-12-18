@@ -33,3 +33,4 @@ There is a `concept-demo` app that uses `Django file custom storage` to communic
 
 1. Run `init.sh` to process and clone the repositories.
 2. The sample user is `demo`, and password is `123abc`.
+3. For this demo we're simply running some of the things in the background (not using the best methodology for this). Run `ps auwx | grep "python"`, and kill the python programs used here (`manager.py`).
