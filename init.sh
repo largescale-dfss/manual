@@ -25,12 +25,7 @@ function process ()
 
 function run ()
 {
-    bash app/manager/startManager.sh &
-    PIDS[0]=$!
-
-    trap "kill ${PIDS[*]}" SIGINT
-
-    wait
+    cd app/manager && bash startManager.sh
 }
 
 if [ $# -eq 0 ]
