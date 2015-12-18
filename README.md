@@ -27,4 +27,4 @@ Given our description above, there are four parts to our system:
 ### How to run this application
 
 1. Run `init.sh` to process and clone the repositories.
-2. 
+2. The sample user is `demo`, and password is `123abc`.

@@ -26,7 +26,7 @@ function process ()
 function run ()
 {
     cd app/manager && bash startManager.sh &
-    cd app/concept-demo/app && python manage.py migrate && python manage.py runserver
+    cd app/concept-demo/app && python manage.py migrate && python manage.py loaddata fixtures/sample_data.json && python manage.py runserver
 }
 
 if [ $# -eq 0 ]
