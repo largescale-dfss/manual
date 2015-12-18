@@ -5,7 +5,7 @@ function clean ()
     fi
 }
 
-function clone()
+function clone ()
 {
     mkdir app
     git clone git@github.com:largescale-dfss/RPC-server-client.git app/RPC-server-client
@@ -15,8 +15,15 @@ function clone()
     git clone git@github.com:largescale-dfss/concept-demo.git app/concept-demo
 }
 
+function process ()
+{
+    cp app/django-file-custom-storage/customStorage.py app/concept-demo/app/dfss/demo/customStorage.py
+    cp app/manager/manager_django_pb2.py app/concept-demo/app/dfss/demo/manager_django_pb2.py
+}
+
 if [ $# -eq 0 ]
   then
     clean
     clone
+    process
 fi
