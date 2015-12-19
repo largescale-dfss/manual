@@ -21,12 +21,7 @@ function process ()
 {
     cp app/django-file-custom-storage/customStorage.py app/concept-demo/app/dfss/demo/customStorage.py
     cp app/manager/manager_django_pb2.py app/concept-demo/app/dfss/demo/manager_django_pb2.py
-}
-
-function run ()
-{
-    cd app/manager && bash startManager.sh &
-    cd app/concept-demo/app && python manage.py migrate && python manage.py loaddata fixtures/sample_data.json && python manage.py runserver
+    cd app/concept-demo/app && python manage.py migrate && python manage.py loaddata fixtures/sample_data.json
 }
 
 if [ $# -eq 0 ]
@@ -34,5 +29,4 @@ if [ $# -eq 0 ]
     clean
     clone
     process
-    run
 fi
